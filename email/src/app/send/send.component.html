@@ -1,0 +1,13 @@
+<div class="card-header">
+    <h3>Email mandata a {{ricevente}}:</h3>
+</div>
+<div class="card-body">
+    <a href="{{ oggetto }}"> {{ oggetto }}</a>
+    <a href="{{ testo }}"> {{ testo }}</a>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group">
+        <a href (click)="chiudi()" class="btn btn-secondary"> chiudi </a>
+        <a href (click)="speciale()" class="btn btn-secondary"> speciale </a>
+    </div>
+</div>

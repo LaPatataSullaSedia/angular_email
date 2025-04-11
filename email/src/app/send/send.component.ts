@@ -1,31 +1,20 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AppComponent } from '../app.component';
+import { Email } from './email.model';
+
 
 @Component({
   selector: 'app-send',
-  imports: [],
+  imports: [AppComponent],
   templateUrl: './send.component.html',
   styleUrl: './send.component.css'
 })
-export class SendComponent {
-  @HostBinding('attr.class') cssClass = 'card';
-  ricevente: string;
-  oggetto: string;
-  testo: string;
-  speciale: boolean;
-  chiuso: boolean;
-  constructor() {
-    this.ricevente = 'Adolf@gmail.com';
-    this.testo = 'yo bro droppo alcuni ebrei';
-    this.oggetto = 'richiesta x bruciarne altri';
-    this.speciale = false;
-    this.chiuso = false;
+export class SendComponent implements OnInit {
+  @Input() mail:Email
+  constructor(){
+    this.mail = new Email("", "", "")
   }
-  chiudi() {
-    this.votes += 1;
-  }
-  speciale() {
-    this.votes -= 1;
-  }
+
   ngOnInit() {}
 
 }
